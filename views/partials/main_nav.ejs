@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Awas's Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                <% if(title == 'Home'){ %>
+                    <a class="nav-link active" href="/home"><i class="fa-solid fa-house"></i> Home </a>
+                <% } else { %>
+                    <a class="nav-link " href="/home"><i class="fa-solid fa-house"></i> Home </a>
+                <% } %>  
+                </li> 
+
+                <li class="nav-item">
+                <% if(title == 'About'){ %>
+                    <a class="nav-link active" href="/about"><i class="fa-sharp fa-solid fa-circle-info"></i> About </a>
+                <% } else { %>
+                    <a class="nav-link " href="/about"><i class="fa-sharp fa-solid fa-circle-info"></i> About </a>
+                <% } %>
+                </li> 
+
+                <li class="nav-item">
+                <% if(title == 'Products'){ %>
+                    <a class="nav-link active" href="/products"><i class="fa-sharp fa-solid fa-barcode"></i> Products </a>
+                <% } else { %>
+                    <a class="nav-link" href="/products"><i class="fa-sharp fa-solid fa-barcode"></i> Products </a>
+                <% } %>
+                </li>
+
+                <li class="nav-item">
+            <% if(title == 'Services'){ %>
+                <a class="nav-link active" href="/services"><i class="fa-sharp fa-solid fa-code"></i> Services </a>
+            <% } else { %>
+                <a class="nav-link" href="/services"><i class="fa-sharp fa-solid fa-code"></i> Services </a>
+            <% } %>           
+            </li>
+
+                <li class="nav-item">
+            <% if(title == 'Contact'){ %>
+                <a class="nav-link active" href="/contact"><i class="fa-sharp fa-solid fa-phone"></i> Contact Us </a>
+            <% } else { %>
+                <a class="nav-link" href="/contact"><i class="fa-sharp fa-solid fa-phone"></i> Contact Us </a>
+            <% } %>           
+                </li> 
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--CSS Section-->
-  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel='stylesheet' href='/Content/app.css' />
-  <title><%= title %></title>
-</head>
-<body>
-  <h1>Welcome to the <%= title %> page</h1>
+<%- include partials/header.ejs%>
+<%- include partials/main_nav.ejs%>
+
+
+<!-- Main nav -->
+
+<main class="container bg-light text-dark p-5">
+  <div class="container bg-light p-5">
+  <h5 class="display-4">Welcome to the <%= title %> page</h1>
+  </div>
+</main>
+
+<!--Bottom nav-->
+<%- include partials/bottom_nav.ejs%>
 
   <!--Script Section-->
-  <script src="/jquery/dist/jquery.min.js"></script>
-  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/Scripts/app.js"></script>
-</body>
-</html>
-
-
+<%- include partials/footer.ejs%>
 
 
 
