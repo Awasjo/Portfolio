@@ -141,10 +141,6 @@ module.exports.processRegisterPage = (req, res, next) => {
 
             // redirect the user and authenticate them
 
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Registered Successfully!'});
-            */
-
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/contact-list')
             });
@@ -153,6 +149,10 @@ module.exports.processRegisterPage = (req, res, next) => {
 }
 
 module.exports.performLogout = (req, res, next) => {
-    req.logout();
+    req.logout(function(err) {
+        if (err) {
+            return next(err); 
+        }
     res.redirect('/');
-}
+    });
+};
