@@ -22,8 +22,19 @@ let flash = require('connect-flash');
 let mongoose = require('mongoose'); 
 let DB = require('./db'); 
 
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
+  autoIndex: false, // Don't build indexes
+  maxPoolSize: 10, // Maintain up to 10 socket connections
+  serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+  socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+  family: 4 // Use IPv4, skip trying IPv6
+}
+
 //point mongoose to db URI
-mongoose.connect(process.env.MONGODB_URI || DB.URI);
+mongoose.connect(process.env.MONGODB_URI || DB.URI, options);
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
