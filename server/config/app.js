@@ -23,7 +23,7 @@ let mongoose = require('mongoose');
 let DB = require('./db'); 
 
 //point mongoose to db URI
-mongoose.connect(process.env.MONGODB_URI||DB.URI);
+mongoose.connect(process.env.MONGODB_URI || DB.URI);
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
