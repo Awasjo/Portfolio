@@ -1,9 +1,13 @@
 {
-  "name": "portfolio",
+  "name": "awas",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^18.8.0",
+    "npm": "^8.18.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
@@ -34,5 +38,17 @@
     "@types/passport": "^1.0.11",
     "@types/passport-local": "^1.0.34",
     "@types/passport-local-mongoose": "^6.1.1"
-  }
+  },
+  "description": "awas's portfolio",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Awasjo/Portfolio.git"
+  },
+  "author": "Awas Jomail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Awasjo/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Awasjo/Portfolio#readme"
 }

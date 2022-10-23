@@ -6,7 +6,9 @@
         <div class="col-md-offset-1 col-md-10">
             <h1><%= title %></h1>
             <!--Add a contact button-->
-            <a href="/contact-list/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <% if(typeof displayName == 'string' && displayName) { %>
+                <a href="/contact-list/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <% } %>
             <br>
             <table class="table table-bordered table-striped table-hover bg p-3 mb-2 text-dark">
                 <!--Table header-->
@@ -14,8 +16,10 @@
                     <th class="text-center">Name</th>
                     <th class="text-center col-2">Phone Number</th>
                     <th class="text-center">Email</th>
-                    <th class="text-content col-1"></th>
-                    <th class="text-content col-1"></th>
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                        <th class="text-content col-1"></th>
+                        <th class="text-content col-1"></th>
+                    <% } %>
                 </tr>
 
                 <!--Repeatable table row-->
@@ -25,8 +29,10 @@
                         <td class="text-center"><%=ContactList[count].name %></td>
                         <td class="text-center"><%=ContactList[count].phone_number %></td>
                         <td class="text-center"><%=ContactList[count].email %></td>
-                        <td class ="text-center col-1"><a href="/contact-list/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
-                        <td class ="text-center col-1"><a href="/contact-list/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td> 
+                        <% if(typeof displayName == 'string' && displayName) { %>
+                            <td class ="text-center col-1"><a href="/contact-list/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                            <td class ="text-center col-1"><a href="/contact-list/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td> 
+                        <% } %> 
                     </tr>
                     <% } %>
             </table>
