@@ -5,13 +5,13 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-// modules for authentication
+//modules for authentication
 let session = require('express-session');
 let passport = require('passport');
 
-let passportJWT = require('passport-jwt');
-let JWTStrategy = passportJWT.Strategy;
-let ExtractJWT = passportJWT.ExtractJwt;
+//let passportJWT = require('passport-jwt');
+//let JWTStrategy = passportJWT.Strategy;
+//let ExtractJWT = passportJWT.ExtractJwt;
 
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
@@ -68,7 +68,7 @@ app.use(session({
   resave: false
 }));
 
-// initialize flash
+// initialize flash - to maintain error message
 app.use(flash());
 
 // initialize passport
@@ -76,7 +76,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // passport user configuration
-
 // create a User Model Instance
 let userModel = require('../models/user');
 let User = userModel.User;
