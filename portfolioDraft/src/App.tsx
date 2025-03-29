@@ -5,40 +5,68 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <>
+    <div className='border-2 border-navy-900 rounded-xl'>
+      <button
+        className="md:hidden fixed bottom-8.5 right-8.5 bg-purple-500 text-white p-3 rounded-full shadow-lg z-50"
+        onClick={() => setIsNavOpen(!isNavOpen)}
+      >
+        <img src="/vite.svg" alt="Menu Icon" className="h-6 w-6" />
+      </button>
       {/* Navigation Bar */}
-      <nav className="p-4 flex justify-between items-center rounded-t-lg border-2">
-        <div className="text-xl font-bold">Portfolio</div>
-        <button
-          className="md:hidden"
-          onClick={() => setIsNavOpen(!isNavOpen)}
-        >
-          ☰
-        </button>
-        <ul
-          className={`md:flex md:gap-4 ${
-            isNavOpen ? 'block' : 'hidden'
-          } absolute md:static w-full md:w-auto`}
-        >
-          <li><a href="#hero" className="block p-2">Home</a></li>
-          <li><a href="#projects" className="block p-2">Projects</a></li>
-          <li><a href="#resume" className="block p-2">Resume</a></li>
-          <li><a href="#technologies" className="block p-2">Technologies</a></li>
-          <li><a href="#about" className="block p-2">About</a></li>
-          <li><a href="#contact" className="block p-2">Contact</a></li>
+      {/* Hamburger Icon for Mobile */}
+      <div
+        className={`md:hidden fixed bottom-8.5 right-8.5 w-3/4 max-w-sm bg-white rounded-xl ${
+          isNavOpen ? '' : 'hidden'
+        } shadow-lg md:static md:transform-none md:bg-transparent md:flex md:gap-4`}
+      >
+        <nav>
+        <ul className="flex flex-col items-start p-4 gap-4 md:flex-row md:items-center md:p-0">
+          <li><a href="#hero" className="block text-lg" onClick={() => setIsNavOpen(false)}>Home</a></li>
+          <li><a href="#projects" className="block text-lg" onClick={() => setIsNavOpen(false)}>Projects</a></li>
+          <li><a href="#resume" className="block text-lg" onClick={() => setIsNavOpen(false)}>Resume</a></li>
+          <li><a href="#technologies" className="block text-lg" onClick={() => setIsNavOpen(false)}>Technologies</a></li>
+          <li><a href="#about" className="block text-lg" onClick={() => setIsNavOpen(false)}>About</a></li>
+          <li><a href="#contact" className="block text-lg" onClick={() => setIsNavOpen(false)}>Contact</a></li>
+        </ul>
+        </nav>
+      </div>
+      <nav className="p-4 flex justify-between items-center">
+        <div className='flex items-center'>
+          <img
+            src="https://images.unsplash.com/photo-1693255673359-9535d9a1dd65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
+            alt="Logo"
+            className="h-10 w-10 rounded-full mr-2"
+          />
+        <p className="text-xl font-bold">
+          Portfolio
+          </p>
+          </div>
+        <ul className="hidden md:flex gap-4">
+          <li><a href="#hero" className="block text-lg">Home</a></li>
+          <li><a href="#projects" className="block text-lg">Projects</a></li>
+          <li><a href="#resume" className="block text-lg">Resume</a></li>
+          <li><a href="#technologies" className="block text-lg">Technologies</a></li>
+          <li><a href="#about" className="block text-lg">About</a></li>
+          <li><a href="#contact" className="block text-lg">Contact</a></li>
         </ul>
       </nav>
 
       {/* Hero Section */}
       <section
         id="hero"
-        className="h-[50vh] bg-cover bg-center flex flex-col justify-center items-center text-center text-navy-900"
+        className="h-[50vh] bg-cover bg-center flex flex-col justify-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1693255673359-9535d9a1dd65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         }}
       >
-        <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
-        <p className="text-2xl mt-4">Awas Jomail</p>
+        <div className="text-center px-4">
+          <p className="text-2xl md:text-5xl font-bold text-white leading-tight">
+            Welcome to My Portfolio
+          </p>
+          <p className="text-l md:text-xl mt-4 text-white">
+            Awas Jomail
+          </p>
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -124,7 +152,7 @@ function App() {
           </button>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 
