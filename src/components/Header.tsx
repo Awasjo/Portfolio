@@ -31,7 +31,7 @@ const Header = () => {
   
   return (
     <div className="fixed top-0 left-0 right-0 w-full bg-primary z-50">
-      <nav className="max-w-7xl mx-auto p-4 flex justify-between items-center shadow">
+      <nav className="max-w-7xl mx-auto p-4 flex justify-between items-center">
         <div className="flex-center">
           <a href="#hero" className="flex items-center">
             <img
