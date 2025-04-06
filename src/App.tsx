@@ -81,7 +81,7 @@ function App() {
       <section id="about" className="p-8">
         <h2 className="text-3xl font-bold text-center mb-6">About Me</h2>
         <p className="text-center max-w-2xl mx-auto">
-          I am currently exploring opportunities in web development and working
+          I am currently exploring opportunities in production support, web development, or predictive analytics while working
           on personal projects to enhance my skills.
         </p>
       </section>
