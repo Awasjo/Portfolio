@@ -1,54 +1,115 @@
-# React + TypeScript + Vite
+# Awas Jomail - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This repository contains the code for my personal portfolio website showcasing my skills, projects, and professional experience as a Software Developer. The portfolio is designed to provide an interactive and responsive user experience while highlighting my technical capabilities and previous work.
 
-Currently, two official plugins are available:
+## Live Demo
+Visit my portfolio at: [https://awasjomail.netlify.app/](https://awasjomail.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Responsive design that works on mobile, tablet, and desktop devices
+- Dark mode/light mode toggle with system preference detection
+- Project showcase with links to GitHub repositories
+- Technologies and skills visualization
+- Résumé/CV section with work history and education
+- Contact form (powered by Netlify Forms)
+- Clean, modern UI with optimized performance
 
-## Expanding the ESLint configuration
+## Technologies Used
+- React
+- TypeScript
+- Tailwind CSS with custom utilities
+- Vite (for build tooling)
+- Netlify (hosting and form handling)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Projects Featured
+- **AstraVita**: A MERN stack application. [View on GitHub](https://github.com/Awasjo/AstraVita-MERN-Project)
+- **Personal Financial Management App**: Mobile application built with React Native and Expo. [View on GitHub](https://github.com/Awasjo/Personal-Finance-Management-App/tree/main#)
+- **More to come!**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Running Locally
+
+### Prerequisites
+- Node.js (v16 or newer)
+- npm or yarn package manager
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Awasjo/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+## Building for Production
+1. Create a production build:
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+2. Preview the production build locally (optional):
+   ```bash
+   npm run preview
+   # or
+   yarn preview
+   ```
+
+## Deployment
+This portfolio is configured for easy deployment to Netlify.
+
+1. Install the Netlify CLI (if not already installed):
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+2. Run the Netlify initialization:
+   ```bash
+   netlify init
+   ```
+
+3. Follow the prompts to connect to your Netlify account and configure your site
+
+4. Deploy to production:
+   ```bash
+   netlify deploy --prod
+   ```
+
+## Project Structure
+```
+portfolioDraft/
+├── public/            # Static assets and images
+├── src/
+│   ├── components/    # React components
+│   ├── App.tsx        # Main application component
+│   ├── index.css      # Global styles and utility classes
+│   └── main.tsx       # Application entry point
+├── index.html         # HTML template
+└── package.json       # Project dependencies and scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contact
+Feel free to reach out to me:
+- Email: awasjomail@gmail.com
+- LinkedIn: [linkedin.com/in/awasjomail](https://linkedin.com/in/awasjomail)
+- GitHub: [github.com/Awasjo](https://github.com/Awasjo)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```

@@ -23,3 +23,6 @@ PlayGround.tsx
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
