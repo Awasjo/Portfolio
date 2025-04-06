@@ -18,24 +18,15 @@
   }
 }
 
-/* general color schema
-    - light: amber-50
-    - dark: dark-green
-    - text-light: gray-800
-    - text-dark: gray-200
-    - hover-light: gray-100
-    - hover-dark: gray-700
-*/
-
 @utility flex-center {
   @apply flex justify-center items-center;
 }
 
-@utility primary-bg {
+@utility bg-primary {
   @apply bg-amber-50 dark:bg-dark-green;
 }
 
-@utility secondary-bg {
+@utility bg-secondary {
   @apply bg-dark-green dark:bg-yellow-950;
 }
 
@@ -46,8 +37,6 @@
 @utility text-primary {
   @apply text-green-900 dark:text-amber-50;
 }
-
-/* New utilities */
 
 @utility section-container {
   @apply p-8;
@@ -62,15 +51,15 @@
 }
 
 @utility primary-card {
-  @apply primary-bg text-primary card;
+  @apply bg-primary text-primary card;
 }
 
 @utility button-primary {
-  @apply inline-block primary-bg text-primary shadow-ring px-6 py-2 rounded-lg font-semibold;
+  @apply inline-block bg-primary text-primary shadow-ring px-6 py-2 rounded-lg font-semibold;
 }
 
 @utility form-input {
-  @apply w-full border p-2 rounded-l;
+  @apply w-full border p-2 bg-primary text-primary rounded-xl;
 }
 
 @utility grid-responsive {
@@ -79,4 +68,8 @@
 
 @utility flex-responsive {
   @apply flex-center flex-col md:flex-row gap-6;
+}
+
+@utility social-icon {
+  @apply hover:text-burnt-amber transition-colors;
 }

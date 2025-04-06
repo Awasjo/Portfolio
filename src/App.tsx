@@ -45,7 +45,7 @@ function App() {
       {/* Resume Section */}
       <section
         id="resume"
-        className="secondary-bg text-amber-50 section-container shadow-lg"
+        className="bg-secondary text-amber-50 section-container shadow-lg"
       >
         <h2 className="section-heading">Resume</h2>
         <div className="flex-responsive justify-between">
