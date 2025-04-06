@@ -1,0 +1,87 @@
+[
+  {
+    "image": "Amazon Web Services.svg",
+    "name": "AWS",
+    "link": "https://aws.amazon.com/"
+  },
+  {
+    "image": "Azure.svg",
+    "name": "Azure",
+    "link": "https://azure.microsoft.com/"
+  },
+  {
+    "image": "C Sharp Logo 2.svg",
+    "name": "C#",
+    "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+  },
+  {
+    "image": "Docker.svg",
+    "name": "Docker",
+    "link": "https://www.docker.com/"
+  },
+  {
+    "image": "Expo.svg",
+    "name": "Expo",
+    "link": "https://expo.dev/"
+  },
+  {
+    "image": "Git.svg",
+    "name": "Git",
+    "link": "https://git-scm.com/"
+  },
+{
+    "image": "GitHub.svg",
+    "name": "GitHub",
+    "link": "https://github.com/"
+  },
+  {
+    "image": "Java.svg",
+    "name": "Java",
+    "link": "https://www.java.com/"
+  },
+  {
+    "image": "JavaScript.svg",
+    "name": "JavaScript",
+    "link": "https://www.javascript.com/"
+  },
+  {
+    "image": "Jira.svg",
+    "name": "Jira",
+    "link": "https://www.atlassian.com/software/jira"
+  },
+  {
+    "image": "Mongo Db.svg",
+    "name": "MongoDB",
+    "link": "https://www.mongodb.com/"
+  },
+  {
+    "image": "MySQL Logo.svg",
+    "name": "MySQL",
+    "link": "https://www.mysql.com/"
+  },
+  {
+    "image": "Node Js.svg",
+    "name": "NodeJS",
+    "link": "https://nodejs.org/"
+  },
+  {
+    "image": "Python.svg",
+    "name": "Python",
+    "link": "https://www.python.org/"
+  },
+  {
+    "image": "React.svg",
+    "name": "React",
+    "link": "https://reactjs.org/"
+  },
+  {
+    "image": "Tailwindcss.svg",
+    "name": "TailwindCSS",
+    "link": "https://tailwindcss.com/"
+  },
+  {
+    "image": "TypeScript.svg",
+    "name": "TypeScript",
+    "link": "https://www.typescriptlang.org/"
+  }
+]
