@@ -39,7 +39,7 @@
 }
 
 @utility text-secondary {
-  @apply dark:text-green-900 text-amber-50;
+  @apply text-amber-50;
 }
 
 @utility section-container {
