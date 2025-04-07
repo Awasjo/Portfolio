@@ -3,23 +3,42 @@ import { useState, FormEvent } from 'react';
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    // Only prevent default if already submitted to avoid interfering with Netlify
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
     if (submitted) {
-      e.preventDefault();
       return;
     }
     
-    // Mark as submitting - Netlify will handle the actual submission
     setIsSubmitting(true);
+    setError(null);
     
-    // The form will be handled by Netlify automatically
-    // We just need to update our UI state
-    setTimeout(() => {
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      // Using Netlify's standard endpoint for form submissions
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(Array.from(formData.entries()) as [string, string][]).toString()
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`);
+      }
+      
+      console.log("Form successfully submitted");
       setSubmitted(true);
+      form.reset();
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError('There was a problem submitting your form. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 500); // Small timeout just for UI feedback
+    }
   };
 
   return (
@@ -51,6 +70,12 @@ const Contact = () => {
           
           {/* Required for Netlify forms */}
           <input type="hidden" name="form-name" value="contact" />
+          
+          {error && (
+            <div className="mb-4 p-3 bg-red-600 text-white rounded">
+              {error}
+            </div>
+          )}
           
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">Name</label>
@@ -85,6 +110,7 @@ const Contact = () => {
               disabled={isSubmitting}
             ></textarea>
           </div>
+          
           <button
             type="submit"
             className="button-primary"
