@@ -31,7 +31,7 @@
 }
 
 @utility shadow-ring {
-  @apply shadow-lg ring-gray-300 dark:ring-gray-600 hover:bg-burnt-amber dark:hover:bg-sandstone transition duration-200;
+  @apply shadow-lg ring-gray-300 dark:ring-gray-600 hover:bg-burnt-amber transition duration-200;
 }
 
 @utility text-primary {
