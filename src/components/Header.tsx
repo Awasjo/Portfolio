@@ -4,13 +4,10 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Check user's preferred color scheme on component mount
+  // Set initial theme to light mode
   useEffect(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    }
+    // Ensure light mode is active by removing dark class if present
+    document.documentElement.classList.remove("dark");
   }, []);
 
   // Toggle dark mode
