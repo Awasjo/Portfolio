@@ -48,6 +48,10 @@ const Footer = () => {
         
         <div className="border-t mt-8 pt-8 text-center">
           <p>© {currentYear} Awas Jomail. All rights reserved.</p>
+          <p className="text-xs mt-2 text-gray-500">
+            Interactive technology showcase powered by vanilla JavaScript physics. 
+            <span className="italic"> Developed with AI assistance from GitHub Copilot.</span>
+          </p>
         </div>
       </div>
     </footer>
