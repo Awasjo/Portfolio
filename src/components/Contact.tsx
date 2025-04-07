@@ -46,7 +46,7 @@ const Contact = () => {
       id="contact"
       className="bg-secondary text-white section-container shadow-lg"
     >
-      <h2 className="section-heading">Reach Out to Me</h2>
+      <h2 className="section-heading text-secondary">Reach Out to Me</h2>
       {submitted ? (
         <div className="max-w-md mx-auto text-center">
           <p className="text-xl">Thank you for your message!</p>
@@ -78,7 +78,7 @@ const Contact = () => {
           )}
           
           <div className="mb-4">
-            <label htmlFor="name" className="block mb-2">Name</label>
+            <label htmlFor="name" className="block mb-2 text-secondary">Name</label>
             <input
               id="name"
               type="text"
@@ -89,7 +89,7 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block mb-2">Email</label>
+            <label htmlFor="email" className="block mb-2 text-secondary">Email</label>
             <input
               id="email"
               type="email"
@@ -100,7 +100,7 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="block mb-2">Message</label>
+            <label htmlFor="message" className="block mb-2 text-secondary">Message</label>
             <textarea
               id="message"
               name="message"

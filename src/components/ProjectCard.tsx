@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description 
 }) => {
   return (
-    <div className="border card flex flex-col justify-center">
+    <div className="card-bordered hover-transition">
       <a
         href={link}
         target="_blank"

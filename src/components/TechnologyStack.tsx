@@ -301,20 +301,8 @@ function TechnologyStack() {
 
   return (
     <section id="technologies" className="section-container">
-      <div className="flex justify-between items-center mb-6">
+      <div className="text-center mb-6">
         <h2 className="section-heading mb-0">Technologies</h2>
-        
-        {isDesktop && (
-          <button
-            onClick={handleToggleInteractive}
-            className={`px-4 py-2 rounded-lg shadow-ring transition-colors ${
-              isInteractive ? 'bg-burnt-amber text-white' : 'bg-dark-green text-white'
-            }`}
-            aria-label={isInteractive ? "Disable interactive mode" : "Enable interactive mode"}
-          >
-            {isInteractive ? "Standard View" : "Interactive Mode"}
-          </button>
-        )}
       </div>
       
       {isLoading && <p className="text-center">Loading technologies...</p>}
@@ -323,13 +311,27 @@ function TechnologyStack() {
       
       {!isLoading && !error && (
         <>
-          {/* Interactive container */}
-          {isInteractive && isDesktop && (
-            <div 
-              ref={containerRef}
-              className="relative w-full max-w-screen-lg mx-auto min-h-[300px] border rounded-lg overflow-hidden bg-primary"
-              style={{ height: '400px' }}
-            ></div>
+          {/* Interactive container with toggle button */}
+          {isDesktop && (
+            <div className="relative max-w-screen-lg mx-auto mb-6">
+              {isInteractive && (
+                <div 
+                  ref={containerRef}
+                  className="relative w-full mx-auto min-h-[300px] border rounded-lg overflow-hidden bg-primary"
+                  style={{ height: '400px' }}
+                ></div>
+              )}
+              
+              <button
+                onClick={handleToggleInteractive}
+                className={`px-4 py-2 rounded-lg shadow-ring transition-colors ${
+                  isInteractive ? 'bg-burnt-amber text-white' : 'bg-dark-green text-white'
+                } ${isInteractive ? 'absolute top-4 right-4' : 'mx-auto block mt-4'}`}
+                aria-label={isInteractive ? "Disable interactive mode" : "Enable interactive mode"}
+              >
+                {isInteractive ? "Standard View" : "Interactive Mode"}
+              </button>
+            </div>
           )}
           
           {/* Standard view */}

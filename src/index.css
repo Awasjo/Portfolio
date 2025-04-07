@@ -38,6 +38,10 @@
   @apply text-green-900 dark:text-amber-50;
 }
 
+@utility text-secondary {
+  @apply dark:text-green-900 text-amber-50;
+}
+
 @utility section-container {
   @apply p-8;
 }
@@ -72,4 +76,48 @@
 
 @utility social-icon {
   @apply hover:text-burnt-amber transition-colors;
+}
+
+@utility avatar-container {
+  @apply relative rounded-full overflow-hidden shadow-xl border-4;
+}
+
+@utility avatar-image {
+  @apply absolute w-full h-full object-cover;
+}
+
+@utility section-subtitle {
+  @apply text-2xl font-semibold mb-4;
+}
+
+@utility text-paragraph {
+  @apply text-lg mb-4;
+}
+
+@utility skill-tag {
+  @apply px-4 py-2 bg-primary text-primary rounded-full text-sm font-medium shadow-md;
+}
+
+@utility hover-transition {
+  @apply transition-all duration-200 ease-in-out hover:scale-105;
+}
+
+@utility container-max-width {
+  @apply max-w-5xl mx-auto;
+}
+
+@utility responsive-padding {
+  @apply px-4 py-6 md:py-8 lg:py-12;
+}
+
+@utility card-bordered {
+  @apply border card flex flex-col justify-center;
+}
+
+@utility nav-button {
+  @apply bg-primary p-2 rounded-full shadow-ring;
+}
+
+@utility section-container-alt {
+  @apply section-container bg-secondary text-secondary py-16;
 }

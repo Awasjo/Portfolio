@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex-center">
           <a href="#hero" className="flex items-center">
             <img
-              src="awas.png"
+              src="coder.svg"
               alt="Logo"
               className="h-10 w-10 rounded-full mr-2"
             />
@@ -53,7 +53,7 @@ const Header = () => {
         <ul className="hidden md:flex gap-4 flex-center">
           {navItems.map((item, index) => (
             <li key={index}>
-              <a href={item.href} className="nav-link">
+              <a href={item.href} className="nav-link hover:text-burnt-amber transition-colors">
                 {item.label}
               </a>
             </li>

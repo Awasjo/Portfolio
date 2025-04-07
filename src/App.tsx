@@ -78,12 +78,31 @@ function App() {
       <TechnologyStack />
 
       {/* About Me Section */}
-      <section id="about" className="p-8">
-        <h2 className="text-3xl font-bold text-center mb-6">About Me</h2>
-        <p className="text-center max-w-2xl mx-auto">
-          I am currently exploring opportunities in production support, web development, or predictive analytics while working
-          on personal projects to enhance my skills.
-        </p>
+      <section id="about" className="section-container-alt">
+        <h2 className="section-heading">About Me</h2>
+        <div className="flex-responsive container-max-width gap-8 px-4">
+          <div className="w-full md:w-1/3 flex justify-center">
+            <div className="avatar-container w-64 h-64 md:w-72 md:h-72">
+              <img 
+                src="/awas.png" 
+                alt="Awas Jomail" 
+                className="avatar-image"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-2/3 text-center md:text-left">
+            <h3 className="section-subtitle">Hello, I'm Awas Jomail</h3>
+            <p className="text-paragraph">
+              I am currently exploring opportunities in production support, web development, or predictive analytics while working
+              on personal projects to enhance my skills.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              <span className="skill-tag hover-transition">Web Development</span>
+              <span className="skill-tag hover-transition">Software Engineering</span>
+              <span className="skill-tag hover-transition">Problem Solving</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Contact Section */}
