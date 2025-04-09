@@ -31,13 +31,15 @@ function App() {
           {/* Placeholder for project cards */}
           <ProjectCard
             image="/astravita-logo-alt.svg"
-            link="https://github.com/Awasjo/AstraVita-MERN-Project"
+            link="https://astravitademo.netlify.app/"
             title="AstraVita"
+            description="AstraVita is a web application designed to provide users with personalized health and wellness recommendations based on genomic testing."
           />
           <ProjectCard
             image="/Expo.svg"
             link="https://github.com/Awasjo/Personal-Finance-Management-App/tree/main#"
             title="Personal Financial Management App "
+            description="A mobile application designed to help users manage their finances effectively. This is a work in progress."
           />
         </div>
       </section>
