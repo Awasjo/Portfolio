@@ -34,7 +34,7 @@ const Header = () => {
             <img
               src="coder.svg"
               alt="Logo"
-              className="h-10 w-10 rounded-full mr-2"
+              className="h-8 w-10 rounded mr-2"
             />
             <p className="text-xl font-bold">Awas' Portfolio</p>
           </a>
