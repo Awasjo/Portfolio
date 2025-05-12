@@ -121,3 +121,39 @@
 @utility section-container-alt {
   @apply section-container bg-secondary text-secondary py-16;
 }
+
+/* Journey Page Styles */
+.journey-view {
+  perspective: 1000px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.thought-bubble {
+  position: relative;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.thought-bubble.fadeout {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
+.car-silhouette {
+  font-size: 3rem;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
