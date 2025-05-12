@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -19,6 +21,7 @@ const Footer = () => {
               <li><a href="#projects" className="hover:text-burnt-amber transition-colors">Projects</a></li>
               <li><a href="#resume" className="hover:text-burnt-amber transition-colors">Resume</a></li>
               <li><a href="#contact" className="hover:text-burnt-amber transition-colors">Contact</a></li>
+              <li><Link to="/journey" className="hover:text-burnt-amber transition-colors">My Journey</Link></li>
             </ul>
           </div>
           

@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const location = useLocation();
+  
+  // Don't show header on Journey page
+  if (location.pathname === '/journey') {
+    return null;
+  }
 
   // Set initial theme to light mode
   useEffect(() => {
@@ -24,6 +31,7 @@ const Header = () => {
     { href: "#technologies", label: "Technologies" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
+    { to: "/journey", label: "Journey" },
   ];
   
   return (
@@ -53,9 +61,15 @@ const Header = () => {
         <ul className="hidden md:flex gap-4 flex-center">
           {navItems.map((item, index) => (
             <li key={index}>
-              <a href={item.href} className="nav-link hover:text-burnt-amber transition-colors">
-                {item.label}
-              </a>
+              {item.to ? (
+                <Link to={item.to} className="nav-link hover:text-burnt-amber transition-colors">
+                  {item.label}
+                </Link>
+              ) : (
+                <a href={item.href} className="nav-link hover:text-burnt-amber transition-colors">
+                  {item.label}
+                </a>
+              )}
             </li>
           ))}
           <li>
@@ -79,13 +93,23 @@ const Header = () => {
             <ul className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href={item.href} 
-                    className="nav-link" 
-                    onClick={() => setIsNavOpen(false)}
-                  >
-                    {item.label}
-                  </a>
+                  {item.to ? (
+                    <Link 
+                      to={item.to} 
+                      className="nav-link" 
+                      onClick={() => setIsNavOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={item.href} 
+                      className="nav-link" 
+                      onClick={() => setIsNavOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
               <li className="pt-2 border-t">
