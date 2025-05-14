@@ -32,7 +32,7 @@ function useMarkerVisibility(position: [number, number, number]) {
     const dotProduct = cameraDirection.dot(toMarker);
 
     // Handle visibility based on distance
-    if ((distance < 2) && visible && !isFadingOut) {
+    if ((distance < 2.75) && visible && !isFadingOut) {
       // Start fadeout animation
       setIsFadingOut(true);
 
@@ -43,7 +43,7 @@ function useMarkerVisibility(position: [number, number, number]) {
     } else if (dotProduct < 0.5 && dotProduct > -0.5) {
       setVisible(false);
       setIsFadingOut(false);
-    } else if (distance >= 2 && !visible) {
+    } else if (distance >= 2.75 && !visible) {
       // Show again when far enough away
       setVisible(true);
       setIsFadingOut(false);

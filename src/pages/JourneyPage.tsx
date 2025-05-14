@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
@@ -45,12 +45,31 @@ export default function JourneyPage() {
   // Ref to the container div for adding event listeners
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Handle mouse wheel events to move along the journey
-  const handleWheel = (e: WheelEvent) => {
+  // For scroll throttling
+  const lastScrollTime = useRef<number>(0);
+  const scrollThrottleMs = 70; // Minimum ms between scroll updates
+
+  // Handle mouse wheel events to move along the journey with better control
+  const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
-    const delta = Math.sign(e.deltaY) * 0.005; // Scroll down = forward, scroll up = backward
+    
+    const now = Date.now();
+    if (now - lastScrollTime.current < scrollThrottleMs) {
+      return; // Throttle scroll events
+    }
+    lastScrollTime.current = now;
+    
+    // Determine if it's likely a trackpad based on deltaMode
+    const isTrackpad = e.deltaMode === 0 && Math.abs(e.deltaY) < 70;
+    
+    // Use different scaling factors for trackpad vs. mouse wheel
+    const scrollFactor = isTrackpad ? 0.0002 : 0.005;
+    
+    // Apply scaling with some normalization for smoother scrolling
+    const delta = Math.sign(e.deltaY) * Math.min(Math.abs(e.deltaY * scrollFactor), 0.01);
+    
     setProgress((p) => Math.max(0, Math.min(1, p + delta)));
-  };
+  }, []);
 
   // Set up event listeners and handle loading state
   useEffect(() => {
@@ -70,7 +89,7 @@ export default function JourneyPage() {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [isMobile]);
+  }, [isMobile, handleWheel]);
 
   // Check if journey is complete (reached the end)
   const isJourneyComplete = progress >= 0.98;
