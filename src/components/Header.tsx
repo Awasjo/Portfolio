@@ -50,7 +50,7 @@ const Header = () => {
         
         {/* Menu Button - Mobile Only */}
         <button
-          className="md:hidden bg-amber-50 dark:bg-yellow-950 p-3 rounded-full shadow-ring z-50"
+          className="md:hidden bg-amber-50 dark:bg-yellow-950 p-3 rounded-full shadow-ring z-50 cursor-pointer"
           onClick={() => setIsNavOpen(!isNavOpen)}
           aria-label={isNavOpen ? "Close menu" : "Open menu"}
         >
@@ -75,7 +75,7 @@ const Header = () => {
           <li>
             <button
               onClick={toggleDarkMode}
-              className="bg-primary p-2 rounded-full shadow-ring"
+              className="bg-primary p-2 rounded-full shadow-ring cursor-pointer"
               aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {isDarkMode ? (

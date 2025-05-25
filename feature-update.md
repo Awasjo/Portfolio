@@ -22,7 +22,7 @@ buttons like send msg don't have that clickable cursor on it, even though its cl
 
 ### Checklist of Suggestions
 
-- [ ] **Fix button cursor behavior**: Ensure buttons like "Send Msg" have a clickable cursor to indicate interactivity.
+- [x] **Fix button cursor behavior**: Ensure buttons like "Send Msg" have a clickable cursor to indicate interactivity.
 - [ ] **Align CTA positions**: Move the "Standard Mode" CTA to the same position as the "Interactive Mode" CTA for consistency.
 - [ ] **Add placeholder text**: Include placeholder text under each field in the "About Me" section.
 - [ ] **Fix logo and name colors**: Ensure the colors of the logo and name in the top-left corner are consistent.

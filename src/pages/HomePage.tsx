@@ -141,7 +141,7 @@ function HomePage() {
               <h3 className="section-subtitle">Hello, I'm Awas Jomail</h3>
               <>
                 <button
-                  className="ml-2 mb-3 hover:opacity-80"
+                  className="ml-2 mb-3 hover:opacity-80 cursor-pointer"
                   onClick={playAudio}
                   aria-label="Play name pronunciation"
                 >

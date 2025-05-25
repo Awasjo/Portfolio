@@ -113,7 +113,7 @@ const Contact = () => {
           
           <button
             type="submit"
-            className="button-primary"
+            className="button-primary cursor-pointer"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Send Message"}

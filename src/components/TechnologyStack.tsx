@@ -324,7 +324,7 @@ function TechnologyStack() {
               
               <button
                 onClick={handleToggleInteractive}
-                className={`px-4 py-2 rounded-lg shadow-ring transition-colors ${
+                className={`px-4 py-2 rounded-lg shadow-ring transition-colors cursor-pointer ${
                   isInteractive ? 'bg-burnt-amber text-white' : 'bg-dark-green text-white'
                 } ${isInteractive ? 'absolute top-4 right-4' : 'mx-auto block mt-4'}`}
                 aria-label={isInteractive ? "Disable interactive mode" : "Enable interactive mode"}
