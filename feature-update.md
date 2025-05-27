@@ -23,13 +23,13 @@ buttons like send msg don't have that clickable cursor on it, even though its cl
 ### Checklist of Suggestions
 
 - [x] **Fix button cursor behavior**: Ensure buttons like "Send Msg" have a clickable cursor to indicate interactivity.
-- [ ] **Align CTA positions**: Move the "Standard Mode" CTA to the same position as the "Interactive Mode" CTA for consistency.
+- [x] **Align CTA positions**: Move the "Standard Mode" CTA to the same position as the "Interactive Mode" CTA for consistency.
+- [ ] **Consolidate resumes**: Combine the two resumes into one. Consider embedding it directly into the page with an option to download as a PDF.
+- [ ] **Add loading animation or reduce delay**: For the speaker icon in "About Me," either add a loading animation or decrease the delay time.
 - [ ] **Add placeholder text**: Include placeholder text under each field in the "About Me" section.
 - [ ] **Fix logo and name colors**: Ensure the colors of the logo and name in the top-left corner are consistent.
-- [ ] **Add loading animation or reduce delay**: For the speaker icon in "About Me," either add a loading animation or decrease the delay time.
 - [ ] **Improve button appearance**: Update the "Skills" section in "About Me" to ensure the skills don't look like buttons.
 - [ ] **Update dark mode colors**: Replace brown and green background colors with more accessible black/grey tones. Ensure green CTAs stand out against the background.
-- [ ] **Unify navigation and footer**: Add the same navigation bar and footer to the "My Journey" page as other pages.
 - [ ] **Add CTA to navigate to "My Journey"**: Include a CTA under "About Me" to help users navigate to the "My Journey" section.
-- [ ] **Consolidate resumes**: Combine the two resumes into one. Consider embedding it directly into the page with an option to download as a PDF.
-- [ ] **Improve "My Journey" graphics**: Enhance the graphics in the "My Journey" section to make them more visually appealing.
+- [ ] **Improve "My Journey" graphics**: Enhance the graphics in the "My Journey" section to make them more visually appealing. Consider a different JS library for my specific use case.
+- [ ] **Unify navigation and footer**: Add the same navigation bar and footer to the "My Journey" page as other pages.
