@@ -314,6 +314,16 @@ function TechnologyStack() {
           {/* Interactive container with toggle button */}
           {isDesktop && (
             <div className="relative max-w-screen-lg mx-auto mb-6">
+              <div className="text-center mb-4">
+                <button
+                  onClick={handleToggleInteractive}
+                  className="px-4 py-2 rounded-lg shadow-ring transition-colors cursor-pointer hover:bg-burnt-amber hover:text-white bg-dark-green text-white"
+                  aria-label={isInteractive ? "Disable interactive mode" : "Enable interactive mode"}
+                >
+                  {isInteractive ? "Standard View" : "Interactive Mode"}
+                </button>
+              </div>
+              
               {isInteractive && (
                 <div 
                   ref={containerRef}
@@ -321,16 +331,6 @@ function TechnologyStack() {
                   style={{ height: '400px' }}
                 ></div>
               )}
-              
-              <button
-                onClick={handleToggleInteractive}
-                className={`px-4 py-2 rounded-lg shadow-ring transition-colors ${
-                  isInteractive ? 'bg-burnt-amber text-white' : 'bg-dark-green text-white'
-                } ${isInteractive ? 'absolute top-4 right-4' : 'mx-auto block mt-4'}`}
-                aria-label={isInteractive ? "Disable interactive mode" : "Enable interactive mode"}
-              >
-                {isInteractive ? "Standard View" : "Interactive Mode"}
-              </button>
             </div>
           )}
           

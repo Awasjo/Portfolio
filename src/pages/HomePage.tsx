@@ -112,15 +112,32 @@ function HomePage() {
             </div>
           </div>
         </div>
+        <div>
+          <div className="pdf-container w-full max-w-3xl mx-auto my-6 rounded-lg overflow-hidden shadow-lg">
+            <object
+              data="/Awas Resume May 30 2025.pdf"
+              type="application/pdf"
+              className="w-full"
+              style={{ height: "70vh"}}
+            >
+              <p className="text-center p-4 bg-gray-100">
+                Your browser doesn't support embedded PDFs.
+                <a
+                  href="/Awas Resume May 30 2025.pdf"
+                  className="text-blue-600 underline ml-1"
+                >
+                  Click here to download the PDF.
+                </a>
+              </p>
+            </object>
+          </div>
+        </div>
         <div className="text-center mt-6 flex flex-col md:flex-row md:justify-around">
           <a
-            href="/Awas Resume Customer Service.pdf"
+            href="/Awas Resume May 30 2025.pdf"
             className="button-primary mb-4 md:mb-0"
           >
-            View Customer Service Resume
-          </a>
-          <a href="/resume.pdf" className="button-primary">
-            View Software Engineering Resume
+            View PDF
           </a>
         </div>
       </section>
@@ -141,7 +158,7 @@ function HomePage() {
               <h3 className="section-subtitle">Hello, I'm Awas Jomail</h3>
               <>
                 <button
-                  className="ml-2 mb-3 hover:opacity-80"
+                  className="ml-2 mb-3 hover:opacity-80 cursor-pointer"
                   onClick={playAudio}
                   aria-label="Play name pronunciation"
                 >
