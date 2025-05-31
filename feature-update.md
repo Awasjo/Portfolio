@@ -24,7 +24,7 @@ buttons like send msg don't have that clickable cursor on it, even though its cl
 
 - [x] **Fix button cursor behavior**: Ensure buttons like "Send Msg" have a clickable cursor to indicate interactivity.
 - [x] **Align CTA positions**: Move the "Standard Mode" CTA to the same position as the "Interactive Mode" CTA for consistency.
-- [ ] **Consolidate resumes**: Combine the two resumes into one. Consider embedding it directly into the page with an option to download as a PDF.
+- [x] **Consolidate resumes**: Combine the two resumes into one. Consider embedding it directly into the page with an option to download as a PDF.
 - [ ] **Add loading animation or reduce delay**: For the speaker icon in "About Me," either add a loading animation or decrease the delay time.
 - [ ] **Add placeholder text**: Include placeholder text under each field in the "About Me" section.
 - [ ] **Fix logo and name colors**: Ensure the colors of the logo and name in the top-left corner are consistent.
