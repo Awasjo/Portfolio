@@ -73,7 +73,7 @@ const Header = () => {
             </li>
           ))}
           <li>
-            <button
+            {/* <button - will update color schema in the future
               onClick={toggleDarkMode}
               className="bg-primary p-2 rounded-full shadow-ring cursor-pointer"
               aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
@@ -83,7 +83,7 @@ const Header = () => {
               ) : (
                 <img src="/Moon.svg" alt="Dark Mode" className="h-6 w-6" />
               )}
-            </button>
+            </button> */}
           </li>
         </ul>
         
@@ -112,7 +112,7 @@ const Header = () => {
                   )}
                 </li>
               ))}
-              <li className="pt-2 border-t">
+              {/* <li className="pt-2 border-t"> will update color schema in the future
                 <button
                   onClick={() => {
                     toggleDarkMode();
@@ -132,7 +132,7 @@ const Header = () => {
                     </>
                   )}
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}
