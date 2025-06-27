@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
   
   // Don't show header on Journey page
@@ -11,17 +11,17 @@ const Header = () => {
     return null;
   }
 
-  // Set initial theme to light mode
-  useEffect(() => {
-    // Ensure light mode is active by removing dark class if present
-    document.documentElement.classList.remove("dark");
-  }, []);
+  // // Set initial theme to light mode
+  // useEffect(() => {
+  //   // Ensure light mode is active by removing dark class if present
+  //   document.documentElement.classList.remove("dark");
+  // }, []);
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  // // Toggle dark mode
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  //   document.documentElement.classList.toggle("dark");
+  // };
   
   // Navigation items to avoid duplication
   const navItems = [
