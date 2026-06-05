@@ -26,3 +26,4 @@ PlayGround.tsx
 
 # Local Netlify folder
 .netlify
+*.bak  
