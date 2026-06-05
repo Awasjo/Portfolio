@@ -5,6 +5,7 @@
 @theme {
   --color-dark-green: #213527;
   --color-burnt-amber: #D9911C;
+  --color-clay: #A8531B;
   --color-sandstone: #D2B48C;
 }
 
@@ -42,6 +43,18 @@
   @apply text-amber-50;
 }
 
+/* Accessible warm accent for text/links.
+   clay (#A8531B, 5.17:1 on amber-50) in light mode,
+   burnt-amber (#D9911C, 5.00:1 on dark-green) in dark mode.
+   Use this instead of `text-burnt-amber` for any text on a light background. */
+@utility text-accent {
+  @apply text-clay dark:text-burnt-amber;
+}
+
+@utility hover-accent {
+  @apply hover:text-clay dark:hover:text-burnt-amber transition-colors;
+}
+
 @utility section-container {
   @apply p-8;
 }
@@ -75,7 +88,7 @@
 }
 
 @utility social-icon {
-  @apply hover:text-burnt-amber transition-colors;
+  @apply hover-accent;
 }
 
 @utility avatar-container {

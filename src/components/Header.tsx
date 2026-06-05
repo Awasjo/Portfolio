@@ -62,11 +62,11 @@ const Header = () => {
           {navItems.map((item, index) => (
             <li key={index}>
               {item.to ? (
-                <Link to={item.to} className="nav-link hover:text-burnt-amber transition-colors">
+                <Link to={item.to} className="nav-link hover-accent">
                   {item.label}
                 </Link>
               ) : (
-                <a href={item.href} className="nav-link hover:text-burnt-amber transition-colors">
+                <a href={item.href} className="nav-link hover-accent">
                   {item.label}
                 </a>
               )}
