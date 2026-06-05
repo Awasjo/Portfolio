@@ -10,7 +10,7 @@ const Footer = () => {
           {/* About/Logo Section */}
           <div>
             <h3 className="text-xl font-bold mb-4">Awas Jomail</h3>
-            <p className="mb-4">Educator, technologist, and Vice Principal at Spirit of Math Schools — passionate about people, learning, and technology.</p>
+            <p className="mb-4">Educator, technologist, and Vice Principal at Spirit of Math Schools â€” passionate about people, learning, and technology.</p>
           </div>
           
           {/* Quick Links */}
