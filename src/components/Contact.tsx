@@ -70,6 +70,12 @@ const Contact = () => {
           
           {/* Required for Netlify forms */}
           <input type="hidden" name="form-name" value="contact" />
+          {/* Email subject line shown in the notification that lands in the private inbox */}
+          <input
+            type="hidden"
+            name="subject"
+            value="New message from awasjomail.ca portfolio"
+          />
           
           {error && (
             <div className="mb-4 p-3 bg-red-600 text-white rounded">
