@@ -9,9 +9,7 @@ function HomePage() {
   const [audioError, setAudioError] = useState("");
 
   const playAudio = () => {
-    // Audio sources in priority order
     const sources = ["/AwasJomail.ogg", "/AwasJomail.mp3", "/AwasJomail.wav"];
-    // Clear any previous error
     setAudioError("");
     const tryPlay = async (index: number) => {
       if (index >= sources.length) {
@@ -23,8 +21,7 @@ function HomePage() {
       const audio = new Audio(sources[index]);
       try {
         await audio.play();
-      } catch (error) {
-        // Try next source on failure
+      } catch {
         tryPlay(index + 1);
       }
     };
@@ -34,19 +31,28 @@ function HomePage() {
   return (
     <div className="pt-[72px]">
       <Header />
+
       {/* Hero Section */}
       <section
         id="hero"
         className="h-[50vh] bg-cover bg-center flex-center flex-col"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1693255673359-9535d9a1dd65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=3000&auto=format&fit=crop')`,
         }}
       >
-        <div className="text-center px-4">
-          <p className="text-2xl md:text-5xl font-bold text-white leading-tight">
-            Welcome to My Portfolio
+        <div
+          className="text-center px-4 py-8 rounded-xl"
+          style={{ background: "rgba(30,20,10,0.52)", backdropFilter: "blur(2px)" }}
+        >
+          <p className="text-2xl md:text-5xl font-bold text-amber-50 leading-tight">
+            Educator. Technologist.
           </p>
-          <p className="text-l md:text-xl mt-4 text-white">Awas Jomail</p>
+          <p className="text-xl md:text-3xl font-semibold text-amber-200 mt-2">
+            Someone who genuinely loves helping people grow.
+          </p>
+          <p className="text-base md:text-lg mt-4 text-amber-100 tracking-wide">
+            Awas Jomail — Toronto, ON
+          </p>
         </div>
       </section>
 
@@ -54,7 +60,6 @@ function HomePage() {
       <section id="projects" className="section-container">
         <h2 className="section-heading">Projects</h2>
         <div className="grid-responsive">
-          {/* Placeholder for project cards */}
           <ProjectCard
             image="/astravita-logo-alt.svg"
             link="https://astravitademo.netlify.app/"
@@ -76,54 +81,60 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Resume Section */}
+      {/* Experience & Background Section */}
       <section
         id="resume"
         className="bg-secondary text-amber-50 section-container shadow-lg"
       >
-        <h2 className="section-heading">Resume</h2>
+        <h2 className="section-heading">Experience &amp; Background</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="primary-card flex flex-col">
-            <h3 className="font-bold text-lg mb-2">Work</h3>
-            <div className="flex-grow">
-              <p className="text-sm">
-                Pharmacy Assistant
-                <br />
-                June 2021 - Present
-              </p>
-              <br />
-              <p className="text-sm">
-                Production Application Support Analyst <br />
-                January 2023 - December 2023
-              </p>
+            <h3 className="font-bold text-lg mb-3">Work Experience</h3>
+            <div className="flex-grow space-y-3">
+              <div>
+                <p className="text-sm font-semibold">🏫 Vice Principal</p>
+                <p className="text-xs opacity-80">Spirit of Math Schools (Willowdale) · Aug 2025 – Present</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold">🏫 Remedial Teacher</p>
+                <p className="text-xs opacity-80">YAAACE · Apr 2026 – Jun 2026</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold">💊 Pharmacy Assistant</p>
+                <p className="text-xs opacity-80">Loblaws · Jun 2021 – Present</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold">💻 Production App Support Analyst</p>
+                <p className="text-xs opacity-80">CIBC · Sep 2023 – Dec 2023</p>
+              </div>
             </div>
           </div>
           <div className="primary-card flex flex-col">
-            <h3 className="font-bold text-lg mb-2">Education</h3>
-            <div className="flex-grow">
-              <p className="text-sm">
-                Software Engineering Technology Diploma <br /> September 2021 -
-                December 2024
-              </p>
-              <br />
-              <p className="text-sm">
-                Honors Bachelor of Science <br /> September 2015 - June 2019
-              </p>
+            <h3 className="font-bold text-lg mb-3">Education</h3>
+            <div className="flex-grow space-y-3">
+              <div>
+                <p className="text-sm font-semibold">Software Engineering Technology Diploma</p>
+                <p className="text-xs opacity-80">Centennial College · Sep 2021 – Dec 2024</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold">Honours Bachelor of Science</p>
+                <p className="text-xs opacity-80">Sep 2015 – Jun 2019</p>
+              </div>
             </div>
           </div>
         </div>
         <div>
           <div className="pdf-container w-full max-w-3xl mx-auto my-6 rounded-lg overflow-hidden shadow-lg">
             <object
-              data="/Awas Resume May 30 2025.pdf"
+              data="/Awas_Jomail_Resume_June2026.pdf"
               type="application/pdf"
               className="w-full"
-              style={{ height: "70vh"}}
+              style={{ height: "70vh" }}
             >
               <p className="text-center p-4 bg-gray-100">
                 Your browser doesn't support embedded PDFs.
                 <a
-                  href="/Awas Resume May 30 2025.pdf"
+                  href="/Awas_Jomail_Resume_June2026.pdf"
                   className="text-blue-600 underline ml-1"
                 >
                   Click here to download the PDF.
@@ -134,13 +145,14 @@ function HomePage() {
         </div>
         <div className="text-center mt-6 flex flex-col md:flex-row md:justify-around">
           <a
-            href="/Awas Resume May 30 2025.pdf"
+            href="/Awas_Jomail_Resume_June2026.pdf"
             className="button-primary mb-4 md:mb-0"
           >
-            View PDF
+            View / Download Resume
           </a>
         </div>
       </section>
+
       {/* Technologies Section */}
       <TechnologyStack />
 
@@ -174,21 +186,28 @@ function HomePage() {
               </>
             </div>
             <p className="text-paragraph mt-4">
-              My journey is driven by a passion for technology, empathy, and
-              making a positive impact. I thrive at the intersection of
-              problem-solving and human connection, combining technical
-              expertise with a compassionate approach to create meaningful
-              solutions. Whether building software or supporting others, I am
-              dedicated to continuous learning and collaboration to make the
-              world a better place.
+              I'm an educator and technologist who leads with people first. As Vice Principal
+              at Spirit of Math Schools (Willowdale), I get to do what I love every day:
+              helping students build confidence, supporting teachers in their practice, and
+              making sure no one falls through the cracks.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-4">
+            <p className="text-paragraph mt-3">
+              I came up through software engineering at Centennial and spent time in production
+              support at CIBC and pharmacy care at Loblaws — and what I found in every single
+              one of those roles is that the technical part is rarely the hardest part. The hard
+              part is communication: listening well, explaining clearly, staying calm when things
+              go sideways, and following through until the problem is actually solved.
+            </p>
+            <p className="text-paragraph mt-3">
+              I show up, I follow through, and I make sure no one gets left behind.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-5">
+              <span className="skill-tag hover-transition">Educational Leadership</span>
+              <span className="skill-tag hover-transition">Curriculum Delivery</span>
+              <span className="skill-tag hover-transition">Mentoring &amp; Coaching</span>
+              <span className="skill-tag hover-transition">People-First Communication</span>
+              <span className="skill-tag hover-transition">Technical Problem Solving</span>
               <span className="skill-tag hover-transition">Web Development</span>
-              <span className="skill-tag hover-transition">Software Engineering</span>
-              <span className="skill-tag hover-transition">Problem Solving</span>
-              <span className="skill-tag hover-transition">Empathy</span>
-              <span className="skill-tag hover-transition">Collaboration</span>
-              <span className="skill-tag hover-transition">Continuous Learning</span>
             </div>
           </div>
         </div>
