@@ -170,3 +170,47 @@
   from { transform: translateY(0); }
   to { transform: translateY(-10px); }
 }
+
+
+/* ============================================================
+   Accessibility: keyboard focus + reduced motion
+   Added as part of the accessibility pass.
+   ============================================================ */
+
+/* Visible focus ring for keyboard users only (not on mouse click).
+   Uses the woody palette: clay in light mode, burnt-amber on dark. */
+:focus-visible {
+  outline: 3px solid var(--color-clay, #A8531B);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.dark :focus-visible,
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--color-burnt-amber, #D9911C);
+}
+
+/* Respect users who ask the OS to reduce motion.
+   Neutralizes the journey car bounce, thought-bubble transitions,
+   and any long-running utility animations, while keeping content visible. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .car-silhouette {
+    animation: none !important;
+  }
+
+  .thought-bubble,
+  .thought-bubble.fadeout {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
