@@ -1,11 +1,21 @@
-# example netlify.toml
+# netlify.toml
 [build]
   command = "npm run build"
   functions = "netlify/functions"
   publish = "dist"
 
-# SPA redirect for client-side routing
+# Form POSTs must NOT be caught by the SPA redirect below.
+# This explicit rule lets Netlify's form handler receive the POST to "/".
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = { Method = ["GET"] }
+
+# SPA redirect for client-side routing (GET navigations only)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  conditions = { Method = ["GET"] }

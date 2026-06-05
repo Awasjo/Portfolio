@@ -10,18 +10,18 @@ const Footer = () => {
           {/* About/Logo Section */}
           <div>
             <h3 className="text-xl font-bold mb-4">Awas Jomail</h3>
-            <p className="mb-4">Software Developer passionate about creating responsive, user-friendly applications with modern technologies.</p>
+            <p className="mb-4">Educator, technologist, and Vice Principal at Spirit of Math Schools — passionate about people, learning, and technology.</p>
           </div>
           
           {/* Quick Links */}
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#hero" className="hover:text-burnt-amber transition-colors">Home</a></li>
-              <li><a href="#projects" className="hover:text-burnt-amber transition-colors">Projects</a></li>
-              <li><a href="#resume" className="hover:text-burnt-amber transition-colors">Resume</a></li>
-              <li><a href="#contact" className="hover:text-burnt-amber transition-colors">Contact</a></li>
-              <li><Link to="/journey" className="hover:text-burnt-amber transition-colors">My Journey</Link></li>
+              <li><a href="#hero" className="hover-accent">Home</a></li>
+              <li><a href="#projects" className="hover-accent">Projects</a></li>
+              <li><a href="#resume" className="hover-accent">Resume</a></li>
+              <li><a href="#contact" className="hover-accent">Contact</a></li>
+              <li><Link to="/journey" className="hover-accent">My Journey</Link></li>
             </ul>
           </div>
           
@@ -51,10 +51,6 @@ const Footer = () => {
         
         <div className="border-t mt-8 pt-8 text-center">
           <p>© {currentYear} Awas Jomail. All rights reserved.</p>
-          <p className="text-xs mt-2 text-gray-500 hidden md:block">
-            Interactive technology showcase powered by vanilla JavaScript physics. 
-            <span className="italic"> Developed with AI assistance from GitHub Copilot.</span>
-          </p>
         </div>
       </div>
     </footer>
