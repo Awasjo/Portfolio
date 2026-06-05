@@ -48,14 +48,17 @@ const Contact = () => {
     >
       <h2 className="section-heading text-secondary">Reach Out to Me</h2>
       {submitted ? (
-        <div className="max-w-md mx-auto text-center">
-          <p className="text-xl">Thank you for your message!</p>
-          <p className="mt-2">I'll get back to you as soon as possible.</p>
+        <div className="max-w-md mx-auto text-center py-12">
+          <div className="text-5xl mb-4">✉️</div>
+          <h3 className="text-2xl font-semibold mb-3 text-secondary">Message received — thank you!</h3>
+          <p className="text-lg opacity-90">I genuinely appreciate you reaching out. I'll read your message carefully and get back to you as soon as I can.</p>
+          <p className="mt-4 text-sm opacity-70">— Awas</p>
         </div>
       ) : (
         <form 
           name="contact" 
-          method="POST" 
+          method="POST"
+          action="/#contact"
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
